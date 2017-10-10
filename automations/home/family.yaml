@@ -1,0 +1,10 @@
+- alias: Home Trigger - Family
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_boolean.family_awaymode
+    from: 'off'
+    to: 'on'
+  actions: 
+    service: script.family_home
+    
