@@ -1,0 +1,9 @@
+- alias: Home Trigger - Tristal
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_boolean.tristal_awaymode
+    from: 'off'
+    to: 'on'
+  actions: 
+    service: script.tristal_home
