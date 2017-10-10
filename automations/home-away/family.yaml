@@ -1,0 +1,21 @@
+- alias: Family - Away
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'home'
+    to: 'not_home'
+  actions:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.family_awaymode
+
+- alias: Family - Home
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'not_home'
+    to: 'home'
+  actions:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.family_awaymode
