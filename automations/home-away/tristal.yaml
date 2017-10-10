@@ -1,0 +1,21 @@
+- alias: Tristal - Away
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.tristal
+    from: 'home'
+    to: 'not_home'
+  actions:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.tristal_awaymode
+
+- alias: Tristal - Home
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.tristal
+    from: 'not_home'
+    to: 'home'
+  actions:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.tristal_awaymode
